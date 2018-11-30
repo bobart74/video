@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { resolve } from 'q';
 import { MovieInterface } from 'src/interfaces/movie.interface';
 
 @Injectable({
