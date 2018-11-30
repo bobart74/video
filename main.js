@@ -61,7 +61,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'Bartek Borowczak';
+        this.title = 'Lista filmów';
         this.color = 'blue';
     }
     Object.defineProperty(AppComponent.prototype, "styles", {
@@ -69,7 +69,7 @@ var AppComponent = /** @class */ (function () {
             return {
                 'background': this.color,
                 'color': 'white',
-                'height': '100px'
+                'height': '1000px'
             };
         },
         enumerable: true,
@@ -132,6 +132,119 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/latest-video.service.ts":
+/*!*****************************************!*\
+  !*** ./src/app/latest-video.service.ts ***!
+  \*****************************************/
+/*! exports provided: LatestVideoService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LatestVideoService", function() { return LatestVideoService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var LatestVideoService = /** @class */ (function () {
+    function LatestVideoService() {
+    }
+    LatestVideoService.prototype.fetchMovies = function () {
+        var movies = [
+            {
+                title: "Bohemian Rhapsody",
+                year: 2018,
+                description: "Dzięki oryginalnemu brzmieniu Queen staje się jednym z najpopularniejszych zespołów w historii muzyki.",
+                duration: 134,
+                rate: 8.3
+            },
+            {
+                title: "Venom",
+                year: 2018,
+                description: "Kiedy Eddie Brock zdobywa moce symbionta, zmuszony jest uwolnić swoje alter-ego Venoma, by ratować własne życie. ",
+                duration: 112,
+                rate: 7.1
+            }
+        ];
+        return new Promise(function (resolve) {
+            setTimeout(function () {
+                resolve(movies);
+            }, 500);
+        });
+    };
+    LatestVideoService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
+        })
+    ], LatestVideoService);
+    return LatestVideoService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/video-detail/video-detail.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/video-detail/video-detail.component.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3ZpZGVvLWRldGFpbC92aWRlby1kZXRhaWwuY29tcG9uZW50LmNzcyJ9 */"
+
+/***/ }),
+
+/***/ "./src/app/video-detail/video-detail.component.html":
+/*!**********************************************************!*\
+  !*** ./src/app/video-detail/video-detail.component.html ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<fieldset *ngIf=\"video\">\n    <legend>Film</legend>\n\n    <h2>\n        {{ video.title }}\n        <small>\n            ( {{ video.year }} )\n        </small>\n    </h2>\n    <p>\n        Czas trwania: {{ video.duration }}\n    </p>\n    <p>{{ video.description }}</p>\n </fieldset>"
+
+/***/ }),
+
+/***/ "./src/app/video-detail/video-detail.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/video-detail/video-detail.component.ts ***!
+  \********************************************************/
+/*! exports provided: VideoDetailComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VideoDetailComponent", function() { return VideoDetailComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var VideoDetailComponent = /** @class */ (function () {
+    function VideoDetailComponent() {
+        this.video = null;
+    }
+    VideoDetailComponent.prototype.ngOnInit = function () {
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])(),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+    ], VideoDetailComponent.prototype, "video", void 0);
+    VideoDetailComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-video-detail',
+            template: __webpack_require__(/*! ./video-detail.component.html */ "./src/app/video-detail/video-detail.component.html"),
+            styles: [__webpack_require__(/*! ./video-detail.component.css */ "./src/app/video-detail/video-detail.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], VideoDetailComponent);
+    return VideoDetailComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/video-list/video-list.component.css":
 /*!*****************************************************!*\
   !*** ./src/app/video-list/video-list.component.css ***!
@@ -150,7 +263,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  video-list works!\n</p>\n"
+module.exports = "<p *ngIf=\"movies.length === 0\">\n  Nie msa danych\n</p>\n\n<ul>\n  <li *ngFor=\"let movie of movies\">\n     <app-video-detail [video]=\"movie\"></app-video-detail>\n  </li>\n</ul>"
 
 /***/ }),
 
@@ -166,20 +279,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VideoListComponent", function() { return VideoListComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _latest_video_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../latest-video.service */ "./src/app/latest-video.service.ts");
+
 
 
 var VideoListComponent = /** @class */ (function () {
-    function VideoListComponent() {
+    function VideoListComponent(latestVideosService) {
+        this.latestVideosService = latestVideosService;
+        this.movies = [];
     }
     VideoListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.latestVideosService.fetchMovies()
+            .then(function (movies) {
+            _this.movies = movies;
+        });
     };
     VideoListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-video-list',
             template: __webpack_require__(/*! ./video-list.component.html */ "./src/app/video-list/video-list.component.html"),
+            providers: [
+                _latest_video_service__WEBPACK_IMPORTED_MODULE_2__["LatestVideoService"]
+            ],
             styles: [__webpack_require__(/*! ./video-list.component.css */ "./src/app/video-list/video-list.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_latest_video_service__WEBPACK_IMPORTED_MODULE_2__["LatestVideoService"]])
     ], VideoListComponent);
     return VideoListComponent;
 }());
@@ -236,6 +361,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _videos_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./videos-routing.module */ "./src/app/videos/videos-routing.module.ts");
 /* harmony import */ var _video_list_video_list_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../video-list/video-list.component */ "./src/app/video-list/video-list.component.ts");
+/* harmony import */ var _video_detail_video_detail_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../video-detail/video-detail.component */ "./src/app/video-detail/video-detail.component.ts");
+
 
 
 
@@ -246,7 +373,7 @@ var VideosModule = /** @class */ (function () {
     }
     VideosModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_video_list_video_list_component__WEBPACK_IMPORTED_MODULE_4__["VideoListComponent"]],
+            declarations: [_video_list_video_list_component__WEBPACK_IMPORTED_MODULE_4__["VideoListComponent"], _video_detail_video_detail_component__WEBPACK_IMPORTED_MODULE_5__["VideoDetailComponent"]],
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
                 _videos_routing_module__WEBPACK_IMPORTED_MODULE_3__["VideosRoutingModule"]
