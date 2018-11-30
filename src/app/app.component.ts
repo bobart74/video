@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'video';
+  title = 'Bartek Borowczak';
+  color = 'blue';
+
+  get styles() {
+    return {
+      'background': this.color,
+      'color': 'white',
+      'height': '100px'
+    };
+  }
 }

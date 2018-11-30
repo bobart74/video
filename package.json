@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "predeploy": "npm run build",
     "deploy": "NODE_DEBUG=gh-pages gh-pages -d dist/video/"
   },
   "private": true,
