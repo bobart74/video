@@ -1,0 +1,14 @@
+<fieldset *ngIf="video">
+    <legend>Film</legend>
+
+    <h2>
+        {{ video.title }}
+        <small>
+            ( {{ video.year }} )
+        </small>
+    </h2>
+    <p>
+        Czas trwania: {{ video.duration }}
+    </p>
+    <p>{{ video.description }}</p>
+ </fieldset>

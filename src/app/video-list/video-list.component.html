@@ -1,3 +1,9 @@
-<p>
-  video-list works!
+<p *ngIf="movies.length === 0">
+  Nie msa danych
 </p>
+
+<ul>
+  <li *ngFor="let movie of movies">
+     <app-video-detail [video]="movie"></app-video-detail>
+  </li>
+</ul>

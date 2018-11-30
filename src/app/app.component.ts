@@ -6,14 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Bartek Borowczak';
+  title = 'Lista filmów';
   color = 'blue';
 
   get styles() {
     return {
       'background': this.color,
       'color': 'white',
-      'height': '100px'
+      'height': '1000px'
     };
   }
 }
